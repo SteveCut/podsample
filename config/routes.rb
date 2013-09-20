@@ -1,4 +1,4 @@
-PodioRailsSample::Application.routes.draw do
+Podsample::Application.routes.draw do
 
   root :to => 'leads#index'
   resources :sessions, :only => [:new, :create] do

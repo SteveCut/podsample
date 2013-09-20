@@ -1,6 +1,6 @@
 class Lead < Podio::Item
-  APP_ID = 573839
-  SPACE_ID = 153322
+  APP_ID = 3277877
+  SPACE_ID = 879310
 
   # Find all items in the Leads app
   def self.all

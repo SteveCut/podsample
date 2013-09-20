@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-PodioRailsSample::Application.load_tasks
+Podsample::Application.load_tasks

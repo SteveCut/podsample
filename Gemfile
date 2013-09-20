@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails'
 
+#gem 'certified'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
