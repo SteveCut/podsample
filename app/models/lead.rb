@@ -21,8 +21,9 @@ class Lead < Podio::Item
   # Find valid statuses
   def self.statuses
     app = Podio::Application.find(APP_ID)
-    field = app.fields.find { |field| field['external_id'] == 'status' }
-    field['config']['settings']['allowed_values']
+    field = app.fields.find { |field| field['external_id'] == 'status2' }
+    #field['config']['settings']['allowed_values']
+    field['config']['settings']['options']
   end
 
   def self.create_from_params(params)
@@ -63,7 +64,7 @@ class Lead < Podio::Item
   end
 
   def status
-    field_values_by_external_id('status', :simple => true)
+    field_values_by_external_id('status2', :simple => true)
   end
 
   def followup_at
@@ -97,7 +98,7 @@ class Lead < Podio::Item
         'sales-contact' => (params[:sales_contact].present? ? params[:sales_contact].to_i : nil),
         'potential-revenue' => { :value => params['potential_revenue_value'], :currency => params['potential_revenue_currency'] },
         'probability-of-sale' => params[:probability].to_i,
-        'status' => params[:status],
+        'status2' => params[:status],
         'next-follow-up' => DateTime.new(params['followup_at(1i)'].to_i, params['followup_at(2i)'].to_i, params['followup_at(3i)'].to_i).to_s(:db)
       }.delete_if { |k, v| v.nil? }
     end
