@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails'
 
+gem 'json'
+
 #gem 'certified'
 
 # Bundle edge Rails instead:

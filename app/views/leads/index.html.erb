@@ -20,7 +20,14 @@
       <td><%=l(lead.followup_at.to_date) if lead.followup_at %></td>
       <td><%= link_to 'Edit', edit_lead_path(lead.id) %> | <%= link_to 'Delete', lead_path(lead.id), :method => :delete, :confirm => 'Are you sure?' %></td>
     </tr>
+    <% @comments = Podio::Comment.find_all_for("item", lead.item_id.to_i) %>
+    <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.value %></td>
+    </tr>
+    <% end %>
   <% end %>
+  
 </table>
 
 <p>

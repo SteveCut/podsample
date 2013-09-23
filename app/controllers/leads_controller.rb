@@ -35,5 +35,4 @@ class LeadsController < ApplicationController
       @sales_contacts = Lead.users
       @statuses = Lead.statuses
     end
-
 end
